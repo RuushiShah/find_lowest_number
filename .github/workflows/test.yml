@@ -18,7 +18,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: 3.x
+        python-version: 3.0
 
     # Step 3: Run Test 1: File with 10 numbers
     - name: Run Test 1: File with 10 numbers
