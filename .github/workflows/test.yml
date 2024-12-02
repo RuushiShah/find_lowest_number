@@ -10,24 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    # Step 1: Checkout code
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
+    # Step 2: Set up Python
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.x
 
-    - name: Run Test 1: 10 numbers
+    # Step 3: Run Test 1: File with 10 numbers
+    - name: Run Test 1: File with 10 numbers
       run: |
         python3 find_lowest_number.py test_data/test1_input.txt test_data/test1_output.txt
         diff test_data/test1_output.txt test_data/test1_expected.txt
 
-    - name: Run Test 2: 1 number
+    # Step 4: Run Test 2: File with 1 number
+    - name: Run Test 2: File with 1 number
       run: |
         python3 find_lowest_number.py test_data/test2_input.txt test_data/test2_output.txt
         diff test_data/test2_output.txt test_data/test2_expected.txt
 
+    # Step 5: Run Test 3: Blank file
     - name: Run Test 3: Blank file
       run: |
         python3 find_lowest_number.py test_data/test3_input.txt test_data/test3_output.txt
